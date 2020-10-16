@@ -1,0 +1,332 @@
+<body class="header__lite" cz-shortcut-listen="true">
+<header class="header">
+    <div class="container header__container o__ltr" dir="ltr">
+        <div class="content">
+            <div class="mo o__centered o__reversed header__meta_wrapper">
+                <div class="mo__body header__site_name">
+                    <div class="header__logo">
+                        <a href="/en/">
+                            <img alt="Ubidots Help Center" src="https://downloads.intercomcdn.com/i/o/8500/470a5087696782b84f9f6e79/generic-icon-white.png">
+                        </a>
+                    </div>
+                </div>
+                <div class="mo__aside">
+                    <div class="header__links">
+                        <a target="_blank" rel="noopener" href="https://industrial.ubidots.com/accounts/signup_industrial" class="header__home__url"><svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg"><title>Group 65</title><g stroke="#FFF" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"><path d="M11.5 6.73v6.77H.5v-11h7.615M4.5 9.5l7-7M13.5 5.5v-5h-5"></path></g></svg><span>Go to Ubidots</span></a>
+
+                    </div>
+                </div>
+            </div>
+            <form action="/en/" autocomplete="off" class="header__form search">
+                <input type="text" autocomplete="off" class="search__input js__search-input o__ltr" placeholder="Search for articles..." tabindex="1" name="q" value="">
+                <div class="search_icons">
+                    <button type="submit" class="search__submit o__ltr"></button>
+                    <a class="search__clear-text__icon">
+                        <svg class="interface-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                            <path d="M8.018 6.643L5.375 4 4 5.375l2.643 2.643L4 10.643 5.375 12l2.643-2.625L10.625 12 12 10.643 9.357 8.018 12 5.375 10.643 4z"></path>
+                        </svg>
+                    </a>
+
+                </div></form>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="content educate_content"><section class="section section__article">
+        <div class="breadcrumb" dir="ltr">
+            <div class="link__arrow o__ltr">
+                <a href="/en/">All Collections</a>
+            </div>
+
+            <div class="link__arrow o__ltr">
+                <a href="/en/collections/356503-iot-projects-tutorials">IoT Projects Tutorials</a>
+            </div>
+
+            <div class="link__arrow o__ltr">Building a People Counter with Raspberry Pi and Ubidots</div>
+        </div>
+
+        <div class="paper paper__large">
+            <div class="content content__narrow">
+                <div class="article intercom-force-break">
+                    <div class="article__meta" dir="ltr">
+                        <h1 class="t__h1">Building a People Counter with Raspberry Pi and Ubidots</h1>
+                        <div class="article__desc">
+                            A simple people counter using Raspberry Pi, a motion sensor, and Ubidots.
+                        </div>
+                        <div class="avatar">
+                            <div class="avatar__photo o__ltr">
+                                <img src="https://static.intercomassets.com/avatars/1072061/square_128/msn2-1488778674.jpg?1488778674" alt="Agustin Pelaez avatar" class="avatar__image">
+
+                            </div>
+                            <div class="avatar__info">
+                                <div>
+                                    Written by <span class="c__darker"> Agustin Pelaez</span>
+                                    <br> Updated over a week ago
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <article dir="ltr"><div class="intercom-container"><img src="https://downloads.intercomcdn.com/i/o/78819302/10b2c8ae2444b698ee05b5db/people.jpg"></div><p class="no-margin">People counters are mostly used in the retail industry to gain better insights of how shoppers behave. They are also found in security, event management and smart cities applications. Imagine you manage a large mall; these counters would help you know how many people enter your mall, which paths they take, where they stop, and foremost, when does it all happen.</p><p class="no-margin"></p><p class="no-margin">&nbsp;Just like most sensors, people counters have been around for a while. However, their data is not always centralized and connected to enterprise systems where they can support decision making.</p><p class="no-margin"></p><p class="no-margin">In this article we'll explore a home-made, very basic people counter, and stream its data to the Ubidots cloud, where better insights can be created.&nbsp;</p><p class="no-margin"></p><p class="no-margin">I built this a day before a demo a the <a href="http://www.youtube.com/watch?v=cSbjFs7XOQs" rel="nofollow noopener noreferrer" target="_blank">Boston New Tech Meetup</a> last week, so I can tell you it was a fast and low-cost DIY project!&nbsp;</p><p class="no-margin"></p><h3 data-post-processed="true">What is Ubidots?</h3><div class="intercom-container intercom-align-center"><img src="https://downloads.intercomcdn.com/i/o/78819303/b74d083e962fcc2dfe3e0584/people2.png"></div><p class="no-margin"><i>Ubidots</i> is a cloud service to <b>store and analyze sensor data in real-time</b>. It allows you to create applications for the Internet of Things, without having to know about web programming, data bases or APIs.</p><p class="no-margin"></p><h3 data-post-processed="true">1. What you'll need</h3><ul><li>Raspberry Pi Model B:</li></ul><div class="intercom-container intercom-align-center"><img src="https://downloads.intercomcdn.com/i/o/78819304/f8a83ee5419d8d3c3ad0ee7c/people3.jpg"></div><ul><li><a href="http://www.microcenter.com/product/413360/PowerPack_2,600mAh_Power_Bank_-_Silver" rel="nofollow noopener noreferrer" target="_blank">A small battery pack, with its micro-USB cable</a>:</li></ul><div class="intercom-container intercom-align-center"><a target="_blank" href="http://www.microcenter.com/product/413360/PowerPack_2,600mAh_Power_Bank_-_Silver" rel="nofollow noopener noreferrer"><img src="https://downloads.intercomcdn.com/i/o/78819305/1226b29c14f78600de298a8b/people4.jpg"></a></div><ul><li><a href="http://www.ebay.com/bhp/mini-usb-wifi-adapter" rel="nofollow noopener noreferrer" target="_blank">Wifi USB Dongle</a>:</li></ul><div class="intercom-container intercom-align-center"><a target="_blank" href="http://www.ebay.com/bhp/mini-usb-wifi-adapter" rel="nofollow noopener noreferrer"><img src="https://downloads.intercomcdn.com/i/o/78819306/13e8b3635b2d4d9da7f26e44/people5.jpg"></a></div><ul><li><a href="http://www.parallax.com/product/910-28027" rel="nofollow noopener noreferrer" target="_blank">Motion Sensor by Parallax</a>:</li></ul><div class="intercom-container intercom-align-center"><a target="_blank" href="http://www.parallax.com/product/910-28027" rel="nofollow noopener noreferrer"><img src="https://downloads.intercomcdn.com/i/o/78819307/db278f85e74f1978c44fb9d0/people6.jpg"></a></div><ul><li>3 female-female wires</li><li>A small box to fit all the components</li></ul><p class="no-margin"><b>&nbsp;</b></p><p class="no-margin"></p><h3 data-post-processed="true">2. Wiring and Casing</h3><p class="no-margin">As you can see, the motion sensor has just three pins: V+, Ground and a third one that outputs the signal: "1" when there is movement, and "0" when there isn't. No need to solder anything, nor to write I2C or serial functions to detect this signal; just plug the cables straight to the GPIO pins of your Raspberry Pi:</p><p class="no-margin"></p><div class="intercom-container intercom-align-center"><img src="https://downloads.intercomcdn.com/i/o/78819308/f619d9b6d3e002c4b81ad97f/people7.png"></div><p class="no-margin">&nbsp;Here's how what our model looks:</p><p class="no-margin"></p><div class="intercom-container intercom-align-center"><img src="https://downloads.intercomcdn.com/i/o/78819309/3c292637b9eb0a52f134a047/people8%2B.jpg"></div><p class="no-margin"><b>**UPDATE** Following a suggestion by Doug Jefferies (Thanks!), Raspberry Pi's GPIOs are designed for 3.3v but we are putting 5v there. So it's a better idea to connect:</b></p><p class="no-margin"></p><p class="no-margin"><b>V+ --&gt; Pin #1 (3.3v).</b></p><p class="no-margin"></p><p class="no-margin">Because the sensor is very sensitive to movement, I used the jumper switch behind it to set the lowest sensibility. Also, I placed it in a dark case with a small aperture, so that the motion sensing focuses in one point instead of being so omnidirectional:<br></p><p class="no-margin"></p><div class="intercom-container intercom-align-center"><img src="https://downloads.intercomcdn.com/i/o/78819310/ecf45a1bec758050264c3f9c/people%2Bt.jpg"></div><div class="intercom-container intercom-align-center"><img src="https://downloads.intercomcdn.com/i/o/78819312/68375ae867da6d5b3a74fb66/people%2Bm.jpg"></div><h3 data-post-processed="true">3. Coding&nbsp;</h3><p class="no-margin">At this point, we'll assume you have done a basic setup of your Raspberry Pi and you are looking at its Linux command line. If not, we recommend <a href="http://ubidots.com/docs/devices/raspberrypi.html#setup-your-raspberry-pi" rel="nofollow noopener noreferrer" target="_blank">going through this guide first</a>. You can also check <a href="http://blog.ubidots.com/setup-wifi-on-raspberry-pi-using-wicd" rel="nofollow noopener noreferrer" target="_blank">this post about the Raspberry Pi WiFi setup.</a></p><p class="no-margin"></p><p class="no-margin">Let's make sure we have all the libraries:</p><p class="no-margin"></p><pre><code>$ sudo apt-get update<br>$ sudo apt-get upgrade<br>$ sudo apt-get install python-setuptools<br>$ sudo easy_install pip<br>$ pip install ubidots<br></code></pre><p class="no-margin">Create a new file called "peoplecounter.py":</p><p class="no-margin"></p><pre><code>$ sudo nano peoplecounter.py</code></pre><p class="no-margin">And write the <a href="https://github.com/ubidots/code-examples/blob/master/help-center-articles/people_counter.py" rel="nofollow noopener noreferrer" target="_blank">available code</a> into it. Make sure to replace the values of the device label, variable label and <a href="https://help.ubidots.com/en/articles/590078-find-your-token-from-your-ubidots-account">ubidots token</a> with the ones in your<a href="http://industrial.ubidots.com/" rel="nofollow noopener noreferrer" target="_blank"> personal Ubidots account</a>.</p><p class="no-margin"></p><div class="intercom-container intercom-align-center"><a class="intercom-h2b-button" target="_blank" href="https://github.com/ubidots/code-examples/blob/master/help-center-articles/people_counter.py" rel="nofollow noopener noreferrer">Download the example script</a></div><p class="no-margin"></p><p class="no-margin">(Note: the code is not too elegant, but hey I'm not a Python developer, just a hardware guy :)</p><p class="no-margin"></p><p class="no-margin">The script consists of a loop that checks the state of the pin #7 (the motion sensor). If it reads a "1", meaning that there was movement, then it increments the "peoplecount" variable and waits 1.5 seconds so the motion sensor goes back to normal. This is done 10 times, making sure there is at least 1 second between each cycle, then it sends the total sum of "movements" to Ubidots. If you need to calibrate the People Counter, you should then play with the "time.sleep" lines with other values.<br></p><p class="no-margin"></p><p class="no-margin">When the script is finished, you're ready to run it from the console:&nbsp;</p><p class="no-margin"></p><pre><code>$ python peoplecounter.py<br></code></pre><p class="no-margin">That's it! Here is how the raw data looked like in my case:<br></p><p class="no-margin"></p><div class="intercom-container intercom-align-center"><img src="https://downloads.intercomcdn.com/i/o/78819313/4bfba69e28a69389dd60489c/people%2Bo.jpg"></div><p class="no-margin">Now that the data is in the cloud, you can add widgets in your dashboard to display the activity in real-time. You can also configure "Events" in your Ubidots account, so you get an SMS or Email notification when your variable hits a specific limit.</p><p class="no-margin"></p><h3 data-post-processed="true">4. Conclusion</h3><div class="intercom-container intercom-align-center"><img src="https://downloads.intercomcdn.com/i/o/78819314/944bc1bf59ae82f5d354a7ac/people%2Bz.jpg"></div><p class="no-margin">This project provides a hint of the amount of people passing through a particular point. It doesn't provide the exact number of people, given the limitations of the motion sensor, but in some applications this might be just enough.</p><p class="no-margin"></p><p class="no-margin">More elaborate people counters use cameras and image processing algorithms to detect what the moving object is (person, car, pet..), in which direction it moves (in / out, left / right) and they could even be extended, in theory, to know the age and gender of the person.</p><p class="no-margin"></p><p class="no-margin">Another way to detect people would be to passively sense the radio signals from their smartphones, such as Wifi or Bluetooth (<a href="http://louwrentius.com/determining-smartphone-market-share-using-wireless-sniffing.html" rel="nofollow noopener noreferrer" target="_blank">check out how this guy detected smartphones around his house</a>). Ultimately, the <a href="http://www.pocket-lint.com/news/123730-apple-s-ibeacon-explained-what-it-is-and-why-it-matters" rel="nofollow noopener noreferrer" target="_blank">iBeacon</a> technology should also be an big enabler of these applications.</p><p class="no-margin"></p><p class="no-margin">In any case, the collected data can be easily sent to Ubidots, where it can be interpreted by creating alerts, live dashboards or plugging it to other systems.</p><p class="no-margin"></p><h3 data-post-processed="true">Do you have sensor project ideas?</h3><p class="no-margin"><i>Create an Ubidots account an make them real!</i></p><p class="no-margin"></p><div class="intercom-container intercom-align-center"><a class="intercom-h2b-button" target="_blank" href="https://industrial.ubidots.com/accounts/signup_industrial/" rel="nofollow noopener noreferrer">Create an Account</a></div><p class="no-margin">Content originally published in <a href="http://blog.ubidots.com/" rel="nofollow noopener noreferrer" target="_blank">Ubidots Blog</a> on August 26, 2013.</p><p class="no-margin"></p></article>
+                </div>
+            </div>
+            <div class="intercom-reaction-picker" dir="ltr">
+                <div class="intercom-reaction-prompt">Did this answer your question?</div>
+
+                <button class="intercom-reaction" data-reaction-text="disappointed" tabindex="0" aria-label="Disappointed Reaction">
+                    <span data-emoji="disappointed" title="Disappointed">😞</span>
+                </button>
+                <button class="intercom-reaction" data-reaction-text="neutral_face" tabindex="0" aria-label="Neutral face Reaction">
+                    <span data-emoji="neutral_face" title="Neutral face">😐</span>
+                </button>
+                <button class="intercom-reaction" data-reaction-text="smiley" tabindex="0" aria-label="Smiley Reaction">
+                    <span data-emoji="smiley" title="Smiley">😃</span>
+                </button>
+            </div>
+
+        </div>
+
+    </section>
+    </div>
+</div>
+<footer class="footer">
+    <div class="container">
+        <div class="content">
+            <div class="u__cf" dir="ltr">
+                <div class="footer__logo">
+                    <a href="/en/">
+                        <img alt="Ubidots Help Center" src="https://downloads.intercomcdn.com/i/o/8500/470a5087696782b84f9f6e79/generic-icon-white.png">
+                    </a>
+                </div>
+                <div class="footer__links">
+                    <ul class="footer__link-list footer__links__custom">
+                        <li class="footer__link footer__link__" data-footer-link-type="custom">
+                            <a target="_blank" rel="nofollow noreferrer noopener" href="https://ubidots.com/">Home</a>
+                        </li>
+                        <li class="footer__link footer__link__" data-footer-link-type="custom">
+                            <a target="_blank" rel="nofollow noreferrer noopener" href="https://industrial.ubidots.com/accounts/signup_industrial">Create an account</a>
+                        </li>
+                        <li class="footer__link footer__link__" data-footer-link-type="custom">
+                            <a target="_blank" rel="nofollow noreferrer noopener" href="https://ubidots.com/blog/">Blog</a>
+                        </li>
+                        <li class="footer__link footer__link__" data-footer-link-type="custom">
+                            <a target="_blank" rel="nofollow noreferrer noopener" href="https://www.youtube.com/channel/UCHM_X1lxLr4Pr-Ynyuo1-SA/videos">Video tutorials</a>
+                        </li>
+                    </ul>
+                    <ul class="footer__link-list footer__links__social">
+                        <li class="footer__link footer__link__facebook" data-footer-link-type="facebook">
+                            <a target="_blank" rel="nofollow noreferrer noopener" href="https://facebook.com/ubidots/">
+                                <svg viewBox="0 0 32 32" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M11.848,32h6.612V15.998h4.411l0.584-5.514H18.46l0.007-2.761c0-1.437,0.137-2.209,2.2-2.209h2.757V0h-4.412   c-5.299,0-7.164,2.675-7.164,7.174v3.311H8.545v5.515h3.303V32z"></path></svg>
+
+                            </a>                  </li>
+                        <li class="footer__link footer__link__twitter" data-footer-link-type="twitter">
+                            <a target="_blank" rel="nofollow noreferrer noopener" href="https://twitter.com/ubidots/">
+                                <svg viewBox="0 0 32 32" version="1.0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M31.993,6.077C30.816,6.6,29.552,6.953,28.223,7.11c1.355-0.812,2.396-2.098,2.887-3.63  c-1.269,0.751-2.673,1.299-4.168,1.592C25.744,3.797,24.038,3,22.149,3c-3.625,0-6.562,2.938-6.562,6.563  c0,0.514,0.057,1.016,0.169,1.496C10.301,10.785,5.465,8.172,2.227,4.201c-0.564,0.97-0.888,2.097-0.888,3.3  c0,2.278,1.159,4.286,2.919,5.464c-1.075-0.035-2.087-0.329-2.972-0.821c-0.001,0.027-0.001,0.056-0.001,0.082  c0,3.181,2.262,5.834,5.265,6.437c-0.55,0.149-1.13,0.23-1.729,0.23c-0.424,0-0.834-0.041-1.234-0.117  c0.834,2.606,3.259,4.504,6.13,4.558c-2.245,1.76-5.075,2.811-8.15,2.811c-0.53,0-1.053-0.031-1.566-0.092  C2.905,27.913,6.355,29,10.062,29c12.072,0,18.675-10.001,18.675-18.675c0-0.284-0.008-0.568-0.02-0.85  C30,8.55,31.112,7.395,31.993,6.077z"></path></svg>
+
+                            </a>                  </li>
+                    </ul>
+                </div>
+                <div class="footer__advert logo">
+                    <img src="https://static.intercomassets.com/alexandria/assets/intercom-a6a6ac0f033657af1aebe2e9e15b94a3cd5eabf6ae8b9916df6ea49099a894d8.png" alt="Intercom">
+                    <a href="https://www.intercom.com/intercom-link?company=Ubidots&amp;solution=customer-support&amp;utm_campaign=intercom-link&amp;utm_content=We+run+on+Intercom&amp;utm_medium=help-center&amp;utm_referrer=http%3A%2F%2Fhelp.ubidots.com%2Fen%2Farticles%2F927987-building-a-people-counter-with-raspberry-pi-and-ubidots&amp;utm_source=desktop-web">We run on Intercom</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<script nonce="">
+    window.intercomSettings = {"app_id":"o73aw9yp","article_id":"927987"};
+</script>
+<script nonce="">
+    (function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src="https://widget.intercom.io/widget/o73aw9yp";var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()
+</script>
+
+<script nonce="">
+    window.alexandriaArticleId = "927987";
+    window.alexandriaArticleContentId = "965627";
+</script>
+
+<script src="https://static.intercomassets.com/alexandria/assets/application-3fdd0e042b1b4fca26c3077843f03e9259080c7fc4d61584f7abe65f49e70283.js" nonce=""></script>
+
+
+
+<iframe id="intercom-frame" style="position: absolute !important; opacity: 0 !important; width: 1px !important; height: 1px !important; top: 0 !important; left: 0 !important; border: none !important; display: block !important; z-index: -1 !important; pointer-events: none;" aria-hidden="true" tabindex="-1" title="Intercom"></iframe><div class="intercom-lightweight-app" aria-live="polite"><style id="intercom-lightweight-app-style" type="text/css">
+    @keyframes intercom-lightweight-app-launcher {
+        from {
+            opacity: 0;
+            transform: scale(0.5);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    @keyframes intercom-lightweight-app-gradient {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes intercom-lightweight-app-messenger {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .intercom-lightweight-app {
+        position: fixed;
+        z-index: 2147483001;
+        width: 0;
+        height: 0;
+        font-family: intercom-font, "Helvetica Neue", "Apple Color Emoji", Helvetica, Arial, sans-serif;
+    }
+
+    .intercom-lightweight-app-gradient {
+        position: fixed;
+        z-index: 2147483002;
+        width: 500px;
+        height: 500px;
+        bottom: 0;
+        right: 0;
+        pointer-events: none;
+        background: radial-gradient(
+                ellipse at bottom right,
+                rgba(29, 39, 54, 0.16) 0%,
+                rgba(29, 39, 54, 0) 72%);
+        animation: intercom-lightweight-app-gradient 200ms ease-out;
+    }
+
+    .intercom-lightweight-app-launcher {
+        position: fixed;
+        z-index: 2147483003;
+        bottom: 20px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: #1180cc;
+        cursor: pointer;
+        box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.06), 0 2px 32px 0 rgba(0, 0, 0, 0.16);
+        animation: intercom-lightweight-app-launcher 250ms ease;
+    }
+
+    .intercom-lightweight-app-launcher:focus {
+        outline: none;
+
+    }
+
+    .intercom-lightweight-app-launcher-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 60px;
+        height: 60px;
+        transition: transform 100ms linear, opacity 80ms linear;
+    }
+
+    .intercom-lightweight-app-launcher-icon-open {
+
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+
+    }
+
+    .intercom-lightweight-app-launcher-icon-open svg {
+        width: 28px;
+        height: 32px;
+    }
+
+    .intercom-lightweight-app-launcher-icon-open svg path {
+        fill: rgb(255, 255, 255);
+    }
+
+    .intercom-lightweight-app-launcher-icon-self-serve {
+
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+
+    }
+
+    .intercom-lightweight-app-launcher-icon-self-serve svg {
+        height: 56px;
+    }
+
+    .intercom-lightweight-app-launcher-icon-self-serve svg path {
+        fill: rgb(255, 255, 255);
+    }
+
+    .intercom-lightweight-app-launcher-custom-icon-open {
+        max-height: 36px;
+        max-width: 36px;
+
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+
+    }
+
+    .intercom-lightweight-app-launcher-icon-minimize {
+
+        opacity: 0;
+        transform: rotate(-60deg) scale(0);
+
+    }
+
+    .intercom-lightweight-app-launcher-icon-minimize svg {
+        width: 16px;
+    }
+
+    .intercom-lightweight-app-launcher-icon-minimize svg path {
+        fill: rgb(255, 255, 255);
+    }
+
+    .intercom-lightweight-app-messenger {
+        position: fixed;
+        z-index: 2147483003;
+        overflow: hidden;
+        background-color: white;
+        animation: intercom-lightweight-app-messenger 250ms ease-out;
+
+        width: 376px;
+        height: calc(100% - 120px);
+        max-height: 704px;
+        min-height: 250px;
+        right: 20px;
+        bottom: 100px;
+        box-shadow: 0 5px 40px rgba(0,0,0,0.16);
+        border-radius: 8px;
+
+    }
+
+    .intercom-lightweight-app-messenger-header {
+        height: 75px;
+        background: linear-gradient(
+                135deg,
+                rgb(18, 34, 68) 0%,
+                rgb(0, 0, 0) 100%
+        );
+    }
+
+    @media print {
+        .intercom-lightweight-app {
+            display: none;
+        }
+    }
+</style>
+    <div class="intercom-lightweight-app-launcher intercom-launcher" role="button" tabindex="0" aria-label="Open Intercom Messenger">
+        <div class="intercom-lightweight-app-launcher-icon intercom-lightweight-app-launcher-icon-open"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 32">
+            <path d="M28 32s-4.714-1.855-8.527-3.34H3.437C1.54 28.66 0 27.026 0 25.013V3.644C0 1.633 1.54 0 3.437 0h21.125c1.898 0 3.437 1.632 3.437 3.645v18.404H28V32zm-4.139-11.982a.88.88 0 00-1.292-.105c-.03.026-3.015 2.681-8.57 2.681-5.486 0-8.517-2.636-8.571-2.684a.88.88 0 00-1.29.107 1.01 1.01 0 00-.219.708.992.992 0 00.318.664c.142.128 3.537 3.15 9.762 3.15 6.226 0 9.621-3.022 9.763-3.15a.992.992 0 00.317-.664 1.01 1.01 0 00-.218-.707z"></path></svg></div><div class="intercom-lightweight-app-launcher-icon intercom-lightweight-app-launcher-icon-minimize"><svg viewBox="0 0 16 14" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M.116 4.884l1.768-1.768L8 9.232l6.116-6.116 1.768 1.768L8 12.768.116 4.884z"></path></svg></div></div></div></body>
